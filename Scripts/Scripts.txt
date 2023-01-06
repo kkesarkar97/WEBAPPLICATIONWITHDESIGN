@@ -1,0 +1,125 @@
+
+
+USE [PersonalInfo]
+GO
+
+/****** Object:  Table [dbo].[City]    Script Date: 01/06/2023 11:38:55 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[City](
+	[CityId] [int] IDENTITY(1,1) NOT NULL,
+	[CityName] [varchar](100) NULL,
+	[StateId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CityId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [PersonalInfo]
+GO
+
+/****** Object:  Table [dbo].[Country]    Script Date: 01/06/2023 11:40:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Country](
+	[CountryId] [int] IDENTITY(1,1) NOT NULL,
+	[CountryName] [varchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CountryId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [PersonalInfo]
+GO
+
+/****** Object:  Table [dbo].[PersonalDetails]    Script Date: 01/06/2023 11:40:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[PersonalDetails](
+	[UserId] [bigint] IDENTITY(1,1) NOT NULL,
+	[FName] [varchar](100) NULL,
+	[MName] [varchar](100) NULL,
+	[LName] [varchar](100) NULL,
+	[EmailId] [varchar](100) NULL,
+	[PhoneNo] [varchar](100) NULL,
+	[Dob] [datetime] NULL,
+	[Address] [varchar](200) NULL,
+	[State] [varchar](100) NULL,
+	[Country] [varchar](100) NULL,
+	[Gender] [varchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+USE [PersonalInfo]
+GO
+
+/****** Object:  Table [dbo].[State]    Script Date: 01/06/2023 11:41:01 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[State](
+	[StateId] [int] IDENTITY(1,1) NOT NULL,
+	[StateName] [varchar](100) NULL,
+	[CountryId] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[StateId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
