@@ -1,0 +1,26 @@
+
+**************************************************************************** Personal Details ****************************************************************************
+
+FName | MName | LName | EmailId | PhoneNo | Dob | Address | State | Country | Gender | 
+
+Kaustubh | Sanjay | Kesarkar | kkesarkar97@gmail.com | 9503812434 | 19-01-1997 00:00:00 | 552 , Shukrawar peth , Gajraj Mitra Mandal , Pune-02. | Western Province | Sri Lanka | 
+Male
+Akshay | Nandakishor | Jadhav | AkshayJadhav@gmail.com | 9561331414 | 23-11-1997 00:00:00 | 1002 , Senadatte Police Chowki , Navipeth , Pune-42. | Gujarat | India | 
+Male
+Aishwarya | Sanjay | Jain | Aishu97@gmail.com | 9766099009 | 15-01-1998 00:00:00 | 2001 , Mangaon kokan , Raigad-67. | Maharashtra | India | 
+Female
+Rutuja | Jayesh | Patil | Rutu@gmail.com | 02024489386 | 29-02-2000 00:00:00 | Latur | Dhaka Division | Bangladesh | 
+Female
+Gaurav | Sanjay | Samel | ggaurav@gmail.com | 9561331414 | 19-01-1997 00:00:00 | XYZ | Northern Province | Sri Lanka | 
+Male
+Manish | Rajan | Kesarkar | manish@gmail.com | 1234567890 | 30-04-1986 00:00:00 | 190 , budhwar peth near Nave Maharashtra bakery | Maharashtra | India | 
+Male
+
+Created On this Date : 06-01-2023 22:52:20
+
+**************************************************************************** Personal Details ****************************************************************************
+
+FName | MName | LName | EmailId | PhoneNo | Dob | Address | State | Country | Gender | 
+
+System.Data.DataRow | System.Data.DataRow | System.Data.DataRow | System.Data.DataRow | System.Data.DataRow | System.Data.DataRow | 
+Created On this Date : 06-01-2023 22:56:51

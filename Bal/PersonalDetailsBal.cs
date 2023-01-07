@@ -62,5 +62,10 @@ namespace Bal
         {
             return dal.GetStateId(country);
         }
+
+        public DataTable ExportData()
+        {
+            return dal.ExportData();
+        }
     }
 }

@@ -201,5 +201,19 @@ namespace Dal
             return Id;
             //return dt;
         }
+
+        public DataTable ExportData()
+        {
+            SqlConnection conn = new SqlConnection(strCon);
+            SqlCommand cmd = new SqlCommand("GetAllPersonalData", conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            SqlDataAdapter sda = new SqlDataAdapter();
+            DataSet ds = new DataSet();
+            sda.SelectCommand = cmd;
+            sda.Fill(ds);
+            DataTable dt = ds.Tables[0];
+            return dt;
+        }
     }
 }

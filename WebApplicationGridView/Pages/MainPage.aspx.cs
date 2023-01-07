@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using Model;
 using Bal;
 using System.Data;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace WebApplicationGridView.Pages
 {
@@ -21,6 +23,7 @@ namespace WebApplicationGridView.Pages
                 BindSearchDropdown();
                 BindCountry();
                 //BindState();
+                //BindGridviewData();
             }
         }
 
@@ -201,5 +204,156 @@ namespace WebApplicationGridView.Pages
             int Id = Convert.ToInt32(ddlCountry.SelectedValue);
             BindState(Id);
         }
+
+        protected void BtnTextFile_Click(object sender, EventArgs e)
+        {
+            DataTable dt = bal.ExportData();
+            
+            int i;
+            StreamWriter swExtLogFile = new StreamWriter(@"D:\Asp.Net\WebApplicationGridView\Reports\ExportDetailsFile.txt", true);
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write("**************************************************************************** Personal Details ****************************************************************************" );
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write(Environment.NewLine);
+
+
+            foreach (DataColumn column in dt.Columns)
+            {
+
+                swExtLogFile.Write(column.ColumnName.ToString() + " | ");
+                
+            }
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write(Environment.NewLine);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                object[] array = row.ItemArray;
+                for (i = 0; i < array.Length - 1; i++)
+                {
+                    swExtLogFile.Write(array[i].ToString() + " | ");
+                }
+                swExtLogFile.Write(Environment.NewLine);
+                swExtLogFile.WriteLine(array[i].ToString());
+            }
+
+
+            swExtLogFile.Write(Environment.NewLine);
+
+            swExtLogFile.Write("Created On this Date : " + DateTime.Now.ToString());
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Flush();
+            swExtLogFile.Close();
+
+        }
+
+        protected void BtnCsv_Click(object sender, EventArgs e)
+        {
+            DataTable dt = bal.ExportData();
+
+            int i;
+            StreamWriter swExtLogFile = new StreamWriter(@"D:\Asp.Net\WebApplicationGridView\Reports\ExportDetailsFile.csv", true);
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write("**************************************************************************** Personal Details ****************************************************************************");
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write(Environment.NewLine);
+
+
+            foreach (DataColumn column in dt.Columns)
+            {
+
+                swExtLogFile.Write(column.ColumnName.ToString() + " , ");
+
+            }
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Write(Environment.NewLine);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                object[] array = row.ItemArray;
+                for (i = 0; i < array.Length - 1; i++)
+                {
+                    swExtLogFile.Write(array[i].ToString() + " , ");
+                }
+                swExtLogFile.Write(Environment.NewLine);
+                swExtLogFile.WriteLine(array[i].ToString());
+            }
+
+
+            swExtLogFile.Write(Environment.NewLine);
+
+            swExtLogFile.Write("Created On this Date : " + DateTime.Now.ToString());
+            swExtLogFile.Write(Environment.NewLine);
+            swExtLogFile.Flush();
+            swExtLogFile.Close();
+
+        }
+
+        protected void BtnXml_Click(object sender, EventArgs e)
+        {
+            DataTable dt = bal.ExportData();
+            //dt.WriteXml(Server.MapPath(@"D:\Asp.Net\WebApplicationGridView\Reports\ExportDetailsFile.xml"));
+            dt.WriteXml(@"D:\Asp.Net\WebApplicationGridView\Reports\ExportDetailsFile.xml");
+            string msg = "Successfully XML Downloaded !!!";
+            Label7.Text = "<a href=ExportDetailsFile.xml> XML file</a>" + msg;
+        }
+
+        protected void BtnExcel_Click(object sender, EventArgs e)
+        {
+            DataTable dt = bal.ExportData();
+            try
+            {
+                var excelApplication = new Microsoft.Office.Interop.Excel.Application();
+                var workbook = excelApplication.Application.Workbooks.Add(Type.Missing);
+                DataColumnCollection dataColumnCollection = dt.Columns;
+
+
+                for (int i = 1; i <= dt.Rows.Count + 1; i++)
+                {
+                    for (int j = 1; j <= dt.Columns.Count; j++)
+                    {
+                        if (i == 1)
+                        {
+                            excelApplication.Cells[i, j] = dataColumnCollection[j - i].ToString();
+                        }
+                        else
+                        {
+                            excelApplication.Cells[i, j] = dt.Rows[i - 2][j - 1].ToString();
+                        }
+                    }
+                }
+                //Save the excel 
+                excelApplication.ActiveWorkbook.SaveCopyAs(@"D:\Asp.Net\WebApplicationGridView\Reports\ExportDetailsFile..xlsx");
+                excelApplication.ActiveWorkbook.Saved = true; 
+                excelApplication.Quit();
+
+                releaseObject(workbook);
+                releaseObject(excelApplication);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                Console.WriteLine("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
     }
 }

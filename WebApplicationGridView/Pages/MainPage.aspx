@@ -88,7 +88,7 @@
                     <asp:Label ID="LDOB" runat="server">Enter Date Of Birth :</asp:Label>
                 </div>
                 <div class="col-sm-3">
-                    <asp:TextBox ID="TxtDOB" runat="server" CssClass="form-control" TextMode="DateTime" ToolTip="Enter Your Birth Date"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Mandatory Field" ControlToValidate="TxtDOB" ValidationGroup="G1" Display="Dynamic" CssClass="form-check" ForeColor="#ff3300"></asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Invalid Format" CssClass="form-check" ControlToValidate="TxtDOB" ForeColor="#ff0000" ValidationExpression="(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$"></asp:RegularExpressionValidator>
+                    <asp:TextBox ID="TxtDOB" runat="server" CssClass="form-control"  ToolTip="Enter Your Birth Date"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Mandatory Field" ControlToValidate="TxtDOB" ValidationGroup="G1" Display="Dynamic" CssClass="form-check" ForeColor="#ff3300"></asp:RequiredFieldValidator><asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Invalid Format" CssClass="form-check" ControlToValidate="TxtDOB" ForeColor="#ff0000" ValidationExpression="(((0|1)[0-9]|2[0-9]|3[0-1])\-(0[1-9]|1[0-2])\-((19|20)\d\d))$"></asp:RegularExpressionValidator>
                 </div><!--(((0|1)[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$--><!--^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$-->
             </div>
             <br />
@@ -188,6 +188,29 @@
                         <SortedDescendingHeaderStyle BackColor="#000065" />
 
                     </asp:GridView>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+            <div class="col-md-3">
+                <asp:Button ID="BtnTextFile" runat="server" Text="Text File Report" CssClass="form-control" OnClick="BtnTextFile_Click" />
+            </div>
+            <div class="col-md-3">
+                <asp:Button ID="BtnExcel" runat="server" Text="Excel Sheet Report" CssClass="form-control" OnClick="BtnExcel_Click" />
+            </div>
+            <div class="col-md-3">
+                <asp:Button ID="BtnXml" runat="server" Text="XML File Report" CssClass="form-control" OnClick="BtnXml_Click" />
+            </div>
+            <div class="col-md-3">
+                <asp:Button ID="BtnCsv" runat="server" Text="Csv File Report" CssClass="form-control" OnClick="BtnCsv_Click" />
+            </div>
+                </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col">
+                    <asp:Label ID="Label7" runat="server" Text="" BackColor="#009933" CssClass="col-form-label" ForeColor="White"></asp:Label>
                 </div>
             </div>
             <br />

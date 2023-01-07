@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <FName>Kaustubh</FName>
+    <MName>Sanjay</MName>
+    <LName>Kesarkar</LName>
+    <EmailId>kkesarkar97@gmail.com</EmailId>
+    <PhoneNo>9503812434</PhoneNo>
+    <Dob>1997-01-19T00:00:00+05:30</Dob>
+    <Address>552  Shukrawar peth  Gajraj Mitra Mandal  Pune-02</Address>
+    <State>Western Province</State>
+    <Country>Sri Lanka</Country>
+    <Gender>Male</Gender>
+  </Table>
+  <Table>
+    <FName>Akshay</FName>
+    <MName>Nandakishor</MName>
+    <LName>Jadhav</LName>
+    <EmailId>aj@gmail.com</EmailId>
+    <PhoneNo>9561331414</PhoneNo>
+    <Dob>1997-11-23T00:00:00+05:30</Dob>
+    <Address>1002  Senadatte Police Chowki  Navipeth  Pune-42</Address>
+    <State>Gujarat</State>
+    <Country>India</Country>
+    <Gender>Male</Gender>
+  </Table>
+  <Table>
+    <FName>Aishwarya</FName>
+    <MName>Sanjay</MName>
+    <LName>Jain</LName>
+    <EmailId>aishu97@gmail.com</EmailId>
+    <PhoneNo>9766099009</PhoneNo>
+    <Dob>1998-01-15T00:00:00+05:30</Dob>
+    <Address>2001  Mangaon kokan  Raigad-67</Address>
+    <State>Karnataka</State>
+    <Country>India</Country>
+    <Gender>Female</Gender>
+  </Table>
+  <Table>
+    <FName>Rutuja</FName>
+    <MName>Jayesh</MName>
+    <LName>Patil</LName>
+    <EmailId>rutu@gmail.com</EmailId>
+    <PhoneNo>02024489386</PhoneNo>
+    <Dob>2000-02-29T00:00:00+05:30</Dob>
+    <Address>10001 Latur Barshi-02</Address>
+    <State>Dhaka Division</State>
+    <Country>Bangladesh</Country>
+    <Gender>Female</Gender>
+  </Table>
+  <Table>
+    <FName>Gaurav</FName>
+    <MName>Sanjay</MName>
+    <LName>Samel</LName>
+    <EmailId>ggaurav@gmail.com</EmailId>
+    <PhoneNo>9561331414</PhoneNo>
+    <Dob>1997-01-19T00:00:00+05:30</Dob>
+    <Address>1003 parvati Pune-09</Address>
+    <State>Northern Province</State>
+    <Country>Sri Lanka</Country>
+    <Gender>Male</Gender>
+  </Table>
+  <Table>
+    <FName>Manish</FName>
+    <MName>Rajan</MName>
+    <LName>Kesarkar</LName>
+    <EmailId>manish@gmail.com</EmailId>
+    <PhoneNo>1234567890</PhoneNo>
+    <Dob>1986-04-30T00:00:00+05:30</Dob>
+    <Address>190  budhwar peth near Nave Maharashtra bakery</Address>
+    <State>Maharashtra</State>
+    <Country>India</Country>
+    <Gender>Male</Gender>
+  </Table>
+</NewDataSet>
